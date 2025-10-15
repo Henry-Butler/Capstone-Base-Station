@@ -7,6 +7,7 @@
 
 import pprint as pp
 import simplepyble
+import struct
 import time
 
 bracelet_names = "VitalLink-"
@@ -59,11 +60,11 @@ class BraceletManager:
 			if bracelet_names in p.idenitfiers():
 				# assign that bracelet an id
 				braclet_id = self.assign_id(p)
-				print(f"Braclet #{braclet_id} deteced: {p.idenitfier()}")
+				print(f"Bracelet #{braclet_id} detected: {p.idenitfier()}")
 
 				try:
 					p.connect()
-					print(f"Braclet #{braclet_id} connected.")
+					print(f"Bracelet #{braclet_id} connected.")
 
 					# replace the UUIDs:
 					service_uuid = p.services()
@@ -72,13 +73,6 @@ class BraceletManager:
 						# if the correct characteristic for data then connect
 						if 'd3e2c4b7-39b2-4b2a-8d5a-7d2a5e3f1199' in chars:
 							def notify_handler(data):
-								"""
-
-								:param data:
-								:type data:
-								:return:
-								:rtype:
-								"""
 								self.process_packet(data)
 							p.notify(service, chars, notify_handler)
 							print("Notification handler set.")
@@ -92,27 +86,49 @@ class BraceletManager:
 					print(f"Bracelet #{braclet_id} failed to connect.")
 
 
-def processPacket(self, data: bytes) -> None:
-	"""
-	Parses received data in packet from wristband device.
+	def processPacket(self, data: bytes) -> None:
+		"""
+		Parses received data in packet from wristband device.
 
-	:param self:
-	:type self:
-	:param data: Data received from wristband device.
-	:type data: bytes
-	:return:
-	:rtype:
-	"""
-	# decode and print
-	print(f"Received {data.hex()} bytes from device {self.dev_id}\n")
+		:param self:
+		:type self:
+		:param data: Data received from wristband device.
+		:type data: bytes
+		:return:
+		:rtype:
+		"""
+		# B - uint 8, H - uint16, I - uint32, b - int8, h - int16
+
+		# check that het received data is 16 bytes
+		if len(data) < 16:
+			print("Invalid packet length")
+			return
+
+		fields = struct.unpack("<B H I B B B h h B B ", data)
+		parsed = {
+			"ver": fields[0],
+			"seq": fields[1],
+			"ts_ms": fields[2],
+			"flags": fields[3],
+			"hr_bpms": fields[4],
+			"spo2": fields[5],
+			"skin_c_x100": fields[6] / 100.0,
+			"act_rms_x100": fields[7] / 100.0,
+			"checksum8": fields[8],
+			"rfu":fields[9],
+		}
+		#debug and check
+		print(f"Decoded Packet: {parsed}")
+		# decode and print
+		print(f"Received {data.hex()} bytes from device {self.dev_id}\n")
 
 
 
-def run(self):
-	while True:
-		self.scan_and_connect()
-		# wait before the next scan cycle
-		time.sleep(8)
+	def run(self):
+		while True:
+			self.scan_and_connect()
+			# wait before the next scan cycle
+			time.sleep(8)
 
 
 if __name__ == "__main__":
