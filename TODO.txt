@@ -1,0 +1,8 @@
+TODO:
+Create Fake Wristband class
+create patient class <done>
+Figure out a way to create a mock for hte wrist bands
+Revamp BaseStation class
+
+
+Notes:
