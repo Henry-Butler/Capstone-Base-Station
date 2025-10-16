@@ -15,7 +15,8 @@ bracelet_names = "VitalLink-"
 
 class BraceletManager:
 	"""
-	This class contains the
+	This class that will be the "manager" for facilitating the bracelets, and processing
+	information from bracelets while worn on patients.
 	"""
 
 	def __init__(self):

@@ -1,5 +1,6 @@
 import uuid
-from typing import List
+from typing import List, Any
+
 
 class Patient:
     """
@@ -59,7 +60,7 @@ class PatientsRegistry:
         """
         return self.patients.get(patient_id)
 
-    def list_patients(self) -> List[Patient]:
+    def list_patients(self) -> list[tuple[Any, Any]]:
         """
         Returns a list of patient IDs and names for display.
         :return:
