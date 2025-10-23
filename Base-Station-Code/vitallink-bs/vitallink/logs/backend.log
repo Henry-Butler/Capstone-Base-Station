@@ -1,0 +1,72 @@
+INFO:     Started server process [83713]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+/Users/stephen/Desktop/vitallink-bs/vitallink/backend/server.py:195: PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+  await broadcast_update({"type": "patient_added", "patient": patient.dict()})
+================================================================================
+VitalLink Backend API Started
+================================================================================
+API Documentation: http://localhost:8000/docs
+WebSocket Endpoint: ws://localhost:8000/ws
+================================================================================
+INFO:     127.0.0.1:52988 - "POST /api/checkin HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52988 - "POST /api/checkin HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52988 - "POST /api/checkin HTTP/1.1" 200 OK
+/Users/stephen/Desktop/vitallink-bs/vitallink/backend/server.py:213: PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+  patient.last_vitals = data.dict()
+/Users/stephen/Desktop/vitallink-bs/vitallink/backend/server.py:220: PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+  {"type": "vitals_update", "patient_id": patient_id, "vitals": data.dict()}
+INFO:     127.0.0.1:52989 - "POST /api/vitals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52990 - "POST /api/vitals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52991 - "POST /api/vitals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52992 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52993 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52994 - "POST /api/vitals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52995 - "POST /api/vitals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52996 - "POST /api/vitals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52997 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52998 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52999 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53002 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53003 - "POST /api/wristband-details HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53004 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53012 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53013 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53017 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53020 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53021 - "POST /api/wristband-details HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53022 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53023 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53024 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53025 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53026 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53027 - "POST /api/wristband-details HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53028 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53030 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53030 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53031 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53032 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53033 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53037 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53038 - "POST /api/wristband-details HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53039 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53040 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53044 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53045 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53046 - "POST /api/wristband-details HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53047 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53048 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53049 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53054 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53055 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53056 - "POST /api/vitals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53057 - "POST /api/vitals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53058 - "POST /api/vitals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53059 - "POST /api/wristband-details HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53060 - "GET /api/queue HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [83713]

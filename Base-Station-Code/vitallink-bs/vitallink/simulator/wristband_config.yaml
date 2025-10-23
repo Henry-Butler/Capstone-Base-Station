@@ -1,0 +1,23 @@
+# VitalLink Wristband Configuration
+
+backend_url: "http://localhost:8000"
+
+auto_scan_ble: true
+scan_timeout: 10.0
+
+# Simulated Wristbands (MOCK devices for testing)
+simulated_bands:
+  - band_id: "MOCK-SIM1"
+    profile: "stable"
+  
+  - band_id: "MOCK-SIM2"
+    profile: "mild_anxiety"
+  
+  - band_id: "MOCK-SIM3"
+    profile: "deteriorating"
+
+real_bands: []
+
+prefer_real_bands: true
+
+default_profile: "stable"
