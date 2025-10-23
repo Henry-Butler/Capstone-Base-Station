@@ -10,7 +10,7 @@ import simplepyble
 import struct
 import time
 
-bracelet_names = "VitalLink-"
+bracelet_names = "VTL-1"
 
 
 class BraceletManager:
