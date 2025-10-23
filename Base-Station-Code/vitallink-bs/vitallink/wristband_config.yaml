@@ -1,0 +1,40 @@
+
+# VitalLink Wristband Configuration
+# Edit this file to manage your wristband inventory
+
+# Backend API URL
+backend_url: "http://localhost:8000"
+
+# Auto-scan for real wristbands on startup
+auto_scan_ble: false
+scan_timeout: 10.0
+
+# Simulated Wristbands
+# Add as many as you need for testing
+simulated_bands:
+  - band_id: "VitalLink-SIM1"
+    profile: "stable"
+  
+  - band_id: "VitalLink-SIM2"
+    profile: "mild_anxiety"
+  
+  - band_id: "VitalLink-SIM3"
+    profile: "deteriorating"
+
+# Real Wristbands (Hardware)
+# Add BLE addresses of your physical wristbands
+# You can find these by running: python -m wristband_manager --scan
+real_bands:
+  # Example (uncomment and edit when you have real hardware):
+  # - band_id: "VitalLink-A3B2"
+  #   ble_address: "D7:91:3F:9A:12:34"
+  #
+  # - band_id: "VitalLink-7B42"
+  #   ble_address: "E1:84:7B:42:56:78"
+
+# Default preference when assigning bands
+prefer_real_bands: false  # Set to true to use real bands first
+
+# Patient profiles for simulated bands
+# Options: stable, mild_anxiety, deteriorating, critical, sepsis
+default_profile: "stable"

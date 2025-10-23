@@ -1,8 +1,12 @@
 TODO:
 Create Fake Wristband class
 create patient class <done>
-Figure out a way to create a mock for hte wrist bands
+Figure out a way to create a mock for the wrist-bands
 Revamp BaseStation class
 
+- Work on questionnaire that would be fed into the patient code <done>
+- Help out with how the bluetooth mock
+- Work on "glue" that connects the submitted form data to backend
+    - using backend send that data to fill out patient class that is passed to gui
 
 Notes:

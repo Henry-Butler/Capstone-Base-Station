@@ -1,0 +1,41 @@
+
+╔══════════════════════════════════════════════════════════════════════════╗
+║                     VitalLink Wristband Simulator                        ║
+║                  Emergency Department Monitoring System                  ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+Available Patient Profiles:
+  - stable: Normal vitals, no deterioration
+  - mild_anxiety: Elevated HR, improves over time
+  - deteriorating: Gradually worsening condition
+  - critical: Severe vitals, triggers emergency tier
+  - sepsis: Rapid deterioration pattern
+
+Usage Examples:
+  1. Run demo scenarios (below)
+  2. Create custom scenarios using BaseStationSimulator
+  3. Integrate with FastAPI backend for web portal
+
+
+Running Demo Scenario 1...
+
+
+================================================================================
+DEMO SCENARIO 1: Mixed Patient Population
+================================================================================
+
+[BASE] Added wristband VitalLink-A1B2 with profile 'Stable Patient'
+[BASE] Added wristband VitalLink-C3D4 with profile 'Mild Anxiety'
+[BASE] Added wristband VitalLink-E5F6 with profile 'Deteriorating Condition'
+[BASE] Starting base station simulation...
+================================================================================
+🟢 [VitalLink-A1B2] P100001 | HR=70 SpO2=98% Temp=36.9°C | NORMAL | Seq=0
+🟢 [VitalLink-C3D4] P100002 | HR=77 SpO2=97% Temp=37.3°C | NORMAL | Seq=0
+🟢 [VitalLink-E5F6] P100003 | HR=71 SpO2=96% Temp=37.2°C | NORMAL | Seq=0
+
+[BASE] Stopping base station...
+
+================================================================================
+SUMMARY:
+{'total_bands': 3, 'active_bands': 3, 'tiers': {'EMERGENCY': 0, 'ALERT': 0, 'NORMAL': 3}, 'total_packets': 3}
+================================================================================
